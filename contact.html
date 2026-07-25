@@ -118,6 +118,7 @@ display:grid;
 grid-template-columns:1fr 1fr;
 gap:40px;
 }
+
 .contact-info{
 display:flex;
 flex-direction:column;
@@ -160,7 +161,6 @@ color:#fff;
 padding:10px 18px;
 transition:.3s;
 }
-
 .social a:hover{
 background:#333;
 }
@@ -184,6 +184,7 @@ margin-bottom:18px;
 border:1px solid #ddd;
 outline:none;
 font-size:15px;
+font-family:inherit;
 }
 
 input:focus,
@@ -205,6 +206,7 @@ padding:14px 28px;
 border:none;
 cursor:pointer;
 font-size:15px;
+text-decoration:none;
 transition:.3s;
 }
 
@@ -240,64 +242,141 @@ margin:auto;
 line-height:1.8;
 color:#ddd;
 margin-bottom:30px;
-  }
+}
+
+.footer{
+background:#111;
+color:#fff;
+padding:60px 50px;
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:40px;
+}
+
+.footer h3,
+.footer h4{
+margin-bottom:15px;
+}
+
+.footer p{
+color:#ccc;
+line-height:1.8;
+}
+
+.footer-bottom{
+background:#000;
+color:#aaa;
+text-align:center;
+padding:20px;
+font-size:14px;
+}
+
+@media(max-width:768px){
+
+.navbar{
+flex-direction:column;
+padding:20px;
+}
+
+.nav-links{
+margin-top:15px;
+}
+
+.container{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:34px;
+}
+
+.section,
+.map{
+padding:40px 20px;
+}
+
+.footer{
+flex-direction:column;
+padding:40px 20px;
+}
+}
+
 </style>
 </head>
-<body>  
 
-  
-<a href="contact.html" class="primary">
-Send Message
+<body>
+<div class="topbar">
+Trusted Financial Solutions • Secure • Transparent • Professional
+</div>
+
+<nav class="navbar">
+
+<a href="index.html" class="logo">
+Covea Wealth
 </a>
 
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="services.html">Services</a>
+<a href="contact.html" class="active">Contact</a>
 </div>
 
-</div>
+</nav>
 
-</div>
+<section class="hero">
 
-<div class="map">
-
-<iframe
-src="https://www.google.com/maps?q=India&output=embed"
-loading="lazy">
-</iframe>
-
-</div>
-
-<div class="cta">
-
-<h2>Let's Build Your Financial Future</h2>
+<h1>Contact Us</h1>
 
 <p>
-Whether you're starting your investment journey or
-looking to optimize your portfolio, our financial
-experts are ready to help you achieve your goals.
+We are committed to helping individuals and businesses
+achieve financial success. Get in touch with our experts
+for personalized financial solutions.
 </p>
 
-<a href="services.html" class="primary">
-Explore Our Services
-</a>
+</section>
+
+<section class="section">
+
+<div class="container">
+
+<div class="contact-info">
+
+<div class="info-box">
+
+<h3>Office Address</h3>
+
+<p>
+Covea Wealth Solutions Pvt. Ltd.<br>
+India
+</p>
 
 </div>
 
-<div class="footer">
+<div class="info-box">
 
-<div>
+<h3>Call Us</h3>
 
-<h3>Covea Wealth Solutions Pvt. Ltd.</h3>
-
-<p>India</p>
+<p>
++91 8766289206
+</p>
 
 </div>
 
-<div>
+<div class="info-box">
 
-<h4>Contact</h4>
+<h3>Email</h3>
 
-<p>+91 8766289206</p>
+<p>
+info@coveawealthsolutions.com
+</p>
 
-<p>info@coveawealthsolutions.com</p>
+</div>
+
+<div class="info-box">
+
+<h3>Follow Us</h3>
 
 <div class="social">
 
@@ -321,11 +400,148 @@ Explore Our Services
 
 </div>
 
+<div class="form-box">
+
+<h2>Send Us a Message</h2>
+
+<form>
+
+<input
+type="text"
+placeholder="Your Name"
+required>
+
+<input
+type="email"
+placeholder="Your Email"
+required>
+
+<input
+type="tel"
+placeholder="Phone Number"
+required>
+
+<select required>
+
+<option value="">
+Select Service
+</option>
+
+<option>
+Investment Planning
+</option>
+
+<option>
+Insurance
+</option>
+
+<option>
+Mutual Funds
+</option>
+
+<option>
+Financial Consultation
+</option>
+
+</select>
+
+<textarea
+placeholder="Your Message"
+required></textarea>
+
+<button
+type="submit"
+class="primary">
+
+Send Message
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+  </section>  
+<div class="map">
+
+<iframe
+src="https://www.google.com/maps?q=India&output=embed"
+loading="lazy"
+allowfullscreen>
+</iframe>
+
+</div>
+
+<section class="cta">
+
+<h2>Let's Build Your Financial Future</h2>
+
+<p>
+Whether you're starting your investment journey or looking
+to optimize your portfolio, our financial experts are
+ready to help you achieve your financial goals.
+</p>
+
+<a href="services.html" class="primary">
+Explore Our Services
+</a>
+
+</section>
+
+<footer class="footer">
+
+<div>
+
+<h3>Covea Wealth Solutions Pvt. Ltd.</h3>
+
+<p>
+Professional Financial & Investment Solutions
+</p>
+
+<p>
+India
+</p>
+
+</div>
+
+<div>
+
+<h4>Contact</h4>
+
+<p>📞 +91 8766289206</p>
+
+<p>✉️ info@coveawealthsolutions.com</p>
+
+<div class="social">
+
+<a href="#">Facebook</a>
+
+<a href="#">Instagram</a>
+
+<a href="#">LinkedIn</a>
+
+<a href="#">X</a>
+
+<a href="#">YouTube</a>
+
+<a href="#">WhatsApp</a>
+
+<a href="#">Telegram</a>
+
+</div>
+
+</div>
+
+</footer>
+
 <div class="footer-bottom">
 
 © 2026 Covea Wealth Solutions Pvt. Ltd.
+All Rights Reserved.
 
 </div>
 
 </body>
-</html>  
+  </html>  
