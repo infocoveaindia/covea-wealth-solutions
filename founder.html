@@ -1,572 +1,652 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Founder | Covea Wealth Solutions</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Founder | Covea Wealth Solutions</title>
 
-    <link rel="stylesheet" href="founder.css">
+<style>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+/* ==========================
+GLOBAL
+========================== */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:Arial, Helvetica, sans-serif;
+background:#ffffff;
+color:#111;
+line-height:1.6;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+img{
+max-width:100%;
+display:block;
+}
+
+/* ==========================
+HEADER
+========================== */
+header{
+width:100%;
+background:#fff;
+border-bottom:1px solid #ececec;
+position:sticky;
+top:0;
+z-index:999;
+}
+
+.topbar{
+background:#0a0a0a;
+color:#fff;
+text-align:center;
+font-size:12px;
+padding:7px 10px;
+letter-spacing:1px;
+}
+
+.navbar{
+max-width:1400px;
+margin:auto;
+padding:18px 30px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.logo{
+font-size:28px;
+font-weight:800;
+letter-spacing:2px;
+}
+
+.logo span{
+font-weight:400;
+}
+
+.navlinks{
+display:flex;
+gap:28px;
+}
+
+.navlinks a{
+font-size:14px;
+font-weight:600;
+position:relative;
+}
+
+.navlinks a:after{
+content:"";
+position:absolute;
+left:0;
+bottom:-6px;
+width:0%;
+height:1px;
+background:#111;
+transition:.3s;
+}
+
+.navlinks a:hover:after{
+width:100%;
+}
+
+/* ==========================
+HERO
+========================== */
+.hero{
+padding:70px 20px;
+background:linear-gradient(to bottom,#fff,#f7f7f7);
+}
+
+.hero-wrap{
+max-width:1350px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 420px;
+gap:60px;
+align-items:center;
+}
+
+.eyebrow{
+font-size:13px;
+letter-spacing:2px;
+text-transform:uppercase;
+color:#666;
+margin-bottom:15px;
+}
+
+.hero h1{
+font-size:58px;
+line-height:1.1;
+font-weight:800;
+margin-bottom:18px;
+max-width:800px;
+}
+
+.hero h1 span{
+font-weight:300;
+}
+
+.hero p{
+font-size:18px;
+color:#555;
+max-width:760px;
+margin-bottom:28px;
+}
+
+.btn-row{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:14px 24px;
+font-size:14px;
+font-weight:700;
+border:1px solid #111;
+transition:.3s;
+cursor:pointer;
+}
+
+.btn.dark{
+background:#111;
+color:#fff;
+}
+
+.btn.dark:hover{
+background:#000;
+}
+
+.btn.light:hover{
+background:#111;
+color:#fff;
+}
+
+/* ==========================
+FOUNDER CARD
+========================== */
+.card{
+background:#fff;
+border:1px solid #ececec;
+padding:30px;
+box-shadow:0 15px 40px rgba(0,0,0,.06);
+}
+
+.photo{
+width:160px;
+height:160px;
+border-radius:50%;
+object-fit:cover;
+margin:auto;
+border:1px solid #ddd;
+}
+
+.card h3{
+font-size:28px;
+margin-top:20px;
+text-align:center;
+}
+
+.role{
+text-align:center;
+font-size:14px;
+color:#666;
+margin-top:6px;
+margin-bottom:25px;
+}
+
+.info{
+border-top:1px solid #f1f1f1;
+margin-top:10px;
+padding-top:10px;
+}
+
+.row{
+display:flex;
+justify-content:space-between;
+padding:14px 0;
+border-bottom:1px solid #f4f4f4;
+font-size:14px;
+}
+
+.verify{
+margin-top:22px;
+background:#f8f8f8;
+padding:14px;
+text-align:center;
+font-weight:700;
+font-size:14px;
+}
+
+/* ==========================
+ABOUT
+========================== */
+.section{
+padding:90px 20px;
+}
+
+.container{
+max-width:1350px;
+margin:auto;
+}
+
+.heading{
+font-size:44px;
+font-weight:800;
+margin-bottom:18px;
+}
+
+.sub{
+font-size:17px;
+color:#666;
+max-width:800px;
+margin-bottom:45px;
+}
+
+.grid-3{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+}
+
+.box{
+padding:30px;
+border:1px solid #ededed;
+background:#fff;
+transition:.3s;
+}
+
+.box:hover{
+transform:translateY(-5px);
+box-shadow:0 15px 30px rgba(0,0,0,.05);
+}
+
+.box h4{
+font-size:22px;
+margin-bottom:10px;
+}
+
+.box p{
+font-size:15px;
+color:#555;
+}
+
+/* ==========================
+TIMELINE
+========================== */
+.timeline{
+background:#fafafa;
+}
+
+.timeline-list{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+}
+
+.milestone{
+background:#fff;
+border:1px solid #ececec;
+padding:25px;
+}
+
+.year{
+font-size:28px;
+font-weight:800;
+margin-bottom:12px;
+}
+
+/* ==========================
+CTA
+========================== */
+.cta{
+background:#111;
+color:#fff;
+text-align:center;
+padding:90px 20px;
+}
+
+.cta h2{
+font-size:46px;
+margin-bottom:15px;
+}
+
+.cta p{
+max-width:800px;
+margin:auto;
+color:#cfcfcf;
+font-size:17px;
+margin-bottom:28px;
+}
+
+.cta .btn{
+border-color:#fff;
+color:#fff;
+}
+
+.cta .btn:hover{
+background:#fff;
+color:#111;
+}
+
+/* ==========================
+FOOTER
+========================== */
+footer{
+background:#050505;
+color:#fff;
+padding:60px 20px 25px;
+}
+
+.footer-grid{
+max-width:1350px;
+margin:auto;
+display:grid;
+grid-template-columns:2fr 1fr 1fr;
+gap:35px;
+padding-bottom:35px;
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+footer h4{
+font-size:18px;
+margin-bottom:18px;
+}
+
+footer p, footer a{
+font-size:14px;
+color:#bdbdbd;
+display:block;
+margin-bottom:10px;
+}
+
+.copy{
+text-align:center;
+font-size:13px;
+color:#8f8f8f;
+padding-top:22px;
+}
+
+/* ==========================
+RESPONSIVE
+========================== */
+@media(max-width:1100px){
+
+.hero-wrap{
+grid-template-columns:1fr;
+}
+
+.grid-3{
+grid-template-columns:1fr 1fr;
+}
+
+.timeline-list{
+grid-template-columns:1fr 1fr;
+}
+
+}
+
+@media(max-width:700px){
+
+.hero h1{
+font-size:38px;
+}
+
+.heading{
+font-size:32px;
+}
+
+.grid-3{
+grid-template-columns:1fr;
+}
+
+.timeline-list{
+grid-template-columns:1fr;
+}
+
+.footer-grid{
+grid-template-columns:1fr;
+}
+
+.navlinks{
+display:none;
+}
+
+}
+
+</style>
 </head>
 
 <body>
 
-    <!-- TOP BAR -->
+<header>
 
-    <div class="top-bar">
-        COVEA — Wealth. Strategy. Growth.
-    </div>
+<div class="topbar">
+COVEA — Wealth. Strategy. Growth.
+</div>
 
-    <!-- HEADER -->
+<div class="navbar">
+<div class="logo">COVEA</div>
 
-    <header>
+<div class="navlinks">
+<a href="/">Home</a>
+<a href="/services">Services</a>
+<a href="/about">About</a>
+<a href="/contact">Contact</a>
+</div>
+</div>
 
-        <div class="logo">
-            COVEA
-        </div>
+</header>
 
-        <nav>
+<!-- HERO -->
+<section class="hero">
 
-            <ul>
+<div class="hero-wrap">
 
-                <li><a href="index.html">Home</a></li>
+<div>
 
-                <li><a href="services.html">Services</a></li>
+<div class="eyebrow">Founder Leadership Profile</div>
 
-                <li><a href="founder.html" class="active">Founder</a></li>
+<h1>
+Aakash Singh <span>Building a Modern Wealth Management Firm for India</span>
+</h1>
 
-                <li><a href="about.html">About</a></li>
+<p>
+Founder of Covea Wealth Solutions Pvt. Ltd., focused on long-term wealth creation,
+risk advisory, financial planning and professional client-first strategies inspired
+by global asset management standards.
+</p>
 
-                <li><a href="contact.html">Contact</a></li>
+<div class="btn-row">
+<a href="#founder" class="btn dark">View Founder Profile</a>
+<a href="tel:8766289206" class="btn light">Call Now</a>
+</div>
 
-            </ul>
+</div>
 
-        </nav>
+<div class="card" id="founder">
 
-    </header>
+<img src="photo.jpg" class="photo">
 
-    <!-- HERO SECTION -->
+<h3>Aakash Singh</h3>
 
-    <section class="founder-hero">
+<div class="role">
+Founder & Managing Director
+</div>
 
-        <div class="overlay"></div>
+<div class="info">
 
-        <div class="hero-content">
+<div class="row">
+<span>Founder ID</span>
+<span>CWS-FND-001</span>
+</div>
 
-            <p class="small-heading">
-                Meet The Founder
-            </p>
+<div class="row">
+<span>Company</span>
+<span>Covea Wealth Solutions</span>
+</div>
 
-            <h1>
-                Building Wealth Through
-                <br>
-                Vision, Trust &
-                Long-Term Strategy
-            </h1>
+<div class="row">
+<span>Contact</span>
+<span>8766289206</span>
+</div>
 
-            <p class="hero-text">
+<div class="row">
+<span>Email</span>
+<span>info@coveawealthsolutions.com</span>
+</div>
 
-                At Covea Wealth Solutions,
-                we believe financial success
-                is achieved through disciplined
-                planning, transparency and
-                institutional-quality advice.
+<div class="row">
+<span>Status</span>
+<span>Verified Leadership</span>
+</div>
 
-            </p>
+</div>
 
-            <div class="hero-buttons">
+<div class="verify">
+✔ Official Founder Identity Verified
+</div>
 
-                <a href="#about-founder" class="btn-primary">
-                    Know More
-                </a>
+</div>
 
-                <a href="contact.html" class="btn-secondary">
-                    Connect Now
-                </a>
+</div>
+</section>
 
-            </div>
+<!-- ABOUT -->
+<section class="section">
+<div class="container">
 
-        </div>
+<h2 class="heading">Leadership Vision</h2>
 
-    </section>
+<p class="sub">
+The mission of Covea Wealth Solutions is to create a trusted Indian wealth platform
+where individuals and families receive institutional quality guidance with personal attention.
+</p>
 
-    <!-- ABOUT FOUNDER -->
+<div class="grid-3">
+
+<div class="box">
+<h4>Client First</h4>
+<p>
+Every recommendation begins with goals, protection, liquidity needs and long-term growth priorities.
+</p>
+</div>
 
-    <section id="about-founder" class="about-founder">
+<div class="box">
+<h4>Research Driven</h4>
+<p>
+Decisions based on market discipline, risk management and practical financial intelligence.
+</p>
+</div>
 
-        <div class="container">
+<div class="box">
+<h4>Long-Term Trust</h4>
+<p>
+Relationships are built through transparency, consistency and responsible advice.
+</p>
+</div>
 
-            <div class="founder-image">
+</div>
 
-                <img src="images/founder.jpg"
-                    alt="Founder">
+</div>
+</section>
 
-            </div>
+<!-- JOURNEY -->
+<section class="section timeline">
+<div class="container">
 
-            <div class="founder-content">
+<h2 class="heading">Founder Journey</h2>
 
-                <span class="section-tag">
-                    Founder & CEO
-                </span>
+<p class="sub">
+A disciplined entrepreneurial roadmap focused on building a respected financial services institution.
+</p>
 
-                <h2>
+<div class="timeline-list">
 
-                    Your Trusted Financial
-                    Growth Partner
+<div class="milestone">
+<div class="year">2024</div>
+<p>Foundation planning, market research and service model development.</p>
+</div>
 
-                </h2>
+<div class="milestone">
+<div class="year">2025</div>
+<p>Client acquisition systems, branding and advisory infrastructure initiated.</p>
+</div>
 
-                <p>
+<div class="milestone">
+<div class="year">2026</div>
+<p>Covea Wealth Solutions expansion phase with structured growth vision.</p>
+</div>
 
-                    Every successful investment
-                    begins with clarity,
-                    discipline and trust.
+<div class="milestone">
+<div class="year">Next</div>
+<p>National scale advisory network with premium wealth solutions.</p>
+</div>
 
-                    Our mission is to help
-                    individuals, families and
-                    businesses make informed
-                    financial decisions that
-                    create long-term wealth.
+</div>
 
-                </p>
+</div>
+</section>
 
-                <p>
+<!-- CTA -->
+<section class="cta">
 
-                    With years of practical
-                    experience in portfolio
-                    management, investment
-                    planning and financial
-                    advisory, our objective
-                    is not only to grow wealth
-                    but also to protect it
-                    across market cycles.
+<h2>Build Wealth With Confidence</h2>
 
-                </p>
+<p>
+Connect directly with the founder-led team for strategic financial planning,
+wealth management and long-term capital growth solutions.
+</p>
 
-                <div class="founder-info">
+<a href="tel:8766289206" class="btn">Speak With Founder Office</a>
 
-                    <div>
+</section>
 
-                        <h4>
-                            Experience
-                        </h4>
+<!-- FOOTER -->
+<footer>
 
-                        <p>
-                            5+ Years
-                        </p>
+<div class="footer-grid">
 
-                    </div>
+<div>
+<h4>Covea Wealth Solutions Pvt. Ltd.</h4>
+<p>India</p>
+<p>Professional Wealth Management & Advisory</p>
+</div>
 
-                    <div>
+<div>
+<h4>Services</h4>
+<a href="#">Investment Planning</a>
+<a href="#">Wealth Management</a>
+<a href="#">Risk Advisory</a>
+</div>
 
-                        <h4>
-                            Clients Served
-                        </h4>
+<div>
+<h4>Contact</h4>
+<p>+91 8766289206</p>
+<p>info@coveawealthsolutions.com</p>
+</div>
 
-                        <p>
-                            500+
-                        </p>
+</div>
 
-                    </div>
+<div class="copy">
+© 2026 Covea Wealth Solutions Pvt. Ltd. All Rights Reserved.
+</div>
 
-                    <div>
-
-                        <h4>
-                            Assets Managed
-                        </h4>
-
-                        <p>
-                            ₹10Cr+
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-  </section>
-      <!-- VISION & MISSION -->
-
-    <section class="vision-section">
-
-        <div class="section-title">
-
-            <span>OUR PURPOSE</span>
-
-            <h2>
-                Vision & Mission
-            </h2>
-
-            <p>
-                We aim to simplify wealth creation through disciplined
-                investment strategies, transparent advice and long-term
-                financial partnerships.
-            </p>
-
-        </div>
-
-        <div class="vision-grid">
-
-            <div class="vision-card">
-
-                <div class="icon">🎯</div>
-
-                <h3>
-                    Our Vision
-                </h3>
-
-                <p>
-
-                    To become India's most trusted
-                    wealth management company by
-                    delivering institutional-quality
-                    financial solutions that create
-                    sustainable long-term wealth.
-
-                </p>
-
-            </div>
-
-            <div class="vision-card">
-
-                <div class="icon">🚀</div>
-
-                <h3>
-                    Our Mission
-                </h3>
-
-                <p>
-
-                    Empower every client with
-                    transparent financial planning,
-                    intelligent investment decisions
-                    and personalized wealth
-                    strategies for every stage
-                    of life.
-
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- JOURNEY -->
-
-    <section class="journey-section">
-
-        <div class="section-title">
-
-            <span>OUR JOURNEY</span>
-
-            <h2>
-                Founder Journey
-            </h2>
-
-        </div>
-
-        <div class="timeline">
-
-            <div class="timeline-item">
-
-                <div class="year">
-                    2020
-                </div>
-
-                <div class="content">
-
-                    <h3>
-                        Started Financial Advisory
-                    </h3>
-
-                    <p>
-
-                        Began helping individuals
-                        understand investments,
-                        insurance and wealth
-                        planning with a client-first
-                        approach.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="timeline-item">
-
-                <div class="year">
-                    2022
-                </div>
-
-                <div class="content">
-
-                    <h3>
-                        Expanded Client Network
-                    </h3>
-
-                    <p>
-
-                        Successfully managed
-                        diversified investment
-                        portfolios and built
-                        long-term relationships
-                        with growing families
-                        and professionals.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="timeline-item">
-
-                <div class="year">
-                    2025
-                </div>
-
-                <div class="content">
-
-                    <h3>
-                        Founded Covea Wealth Solutions
-                    </h3>
-
-                    <p>
-
-                        Established Covea Wealth
-                        Solutions with the vision
-                        of providing premium wealth
-                        management services based
-                        on trust, research and
-                        transparency.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ACHIEVEMENTS -->
-
-    <section class="achievement-section">
-
-        <div class="achievement-box">
-
-            <h2>500+</h2>
-
-            <p>
-                Happy Clients
-            </p>
-
-        </div>
-
-        <div class="achievement-box">
-
-            <h2>₹10Cr+</h2>
-
-            <p>
-                Assets Managed
-            </p>
-
-        </div>
-
-        <div class="achievement-box">
-
-            <h2>5+</h2>
-
-            <p>
-                Years Experience
-            </p>
-
-        </div>
-
-        <div class="achievement-box">
-
-            <h2>100%</h2>
-
-            <p>
-                Client Focused
-            </p>
-
-        </div>
-
-          </section>
-    <!-- CORE VALUES -->
-
-    <section class="values-section">
-
-        <div class="section-title">
-
-            <span>OUR VALUES</span>
-
-            <h2>
-                Principles That Guide Every Decision
-            </h2>
-
-            <p>
-                Every financial recommendation is built on integrity,
-                transparency and long-term value creation.
-            </p>
-
-        </div>
-
-        <div class="values-grid">
-
-            <div class="value-card">
-
-                <div class="value-icon">🤝</div>
-
-                <h3>Trust</h3>
-
-                <p>
-                    Long-term relationships built through honesty,
-                    transparency and consistent performance.
-                </p>
-
-            </div>
-
-            <div class="value-card">
-
-                <div class="value-icon">📊</div>
-
-                <h3>Research</h3>
-
-                <p>
-                    Every recommendation is supported by data,
-                    market insights and disciplined analysis.
-                </p>
-
-            </div>
-
-            <div class="value-card">
-
-                <div class="value-icon">🛡️</div>
-
-                <h3>Protection</h3>
-
-                <p>
-                    Wealth creation is incomplete without protecting
-                    capital against financial uncertainties.
-                </p>
-
-            </div>
-
-            <div class="value-card">
-
-                <div class="value-icon">📈</div>
-
-                <h3>Growth</h3>
-
-                <p>
-                    Sustainable long-term growth remains the core
-                    objective behind every investment strategy.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- FOUNDER MESSAGE -->
-
-    <section class="founder-message">
-
-        <div class="message-container">
-
-            <span class="section-tag">
-                A Message From The Founder
-            </span>
-
-            <h2>
-                Wealth Is Built With Patience,
-                Discipline & Trust.
-            </h2>
-
-            <p>
-
-                "Our responsibility extends beyond managing money.
-                We help individuals and families make confident
-                financial decisions that create lasting prosperity.
-
-                At Covea Wealth Solutions, every client receives
-                personalized guidance, transparent communication
-                and strategies focused on long-term success."
-
-            </p>
-
-            <h4>
-                — Founder & CEO
-            </h4>
-
-        </div>
-
-    </section>
-
-    <!-- CTA -->
-
-    <section class="founder-cta">
-
-        <h2>
-            Let's Build Your Financial Future Together
-        </h2>
-
-        <p>
-            Start your wealth journey with trusted financial experts.
-        </p>
-
-        <a href="contact.html" class="cta-btn">
-            Schedule a Consultation
-        </a>
-
-    </section>
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        <div class="footer-left">
-
-            <h3>
-                Covea Wealth Solutions Pvt. Ltd.
-            </h3>
-
-            <p>
-                India
-            </p>
-
-        </div>
-
-        <div class="footer-right">
-
-            <h3>
-                Contact
-            </h3>
-
-            <p>
-                +91 8766289206
-            </p>
-
-            <p>
-                info@coveawealthsolutions.com
-            </p>
-
-        </div>
-
-    </footer>
+</footer>
 
 </body>
-
-                  </html>          
+    </html>
