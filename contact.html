@@ -3,545 +3,406 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact | Covea Wealth Solutions Pvt. Ltd.</title>
+<title>Contact - COVEA</title>
 
 <style>
 
 /* RESET */
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
-font-family:'Inter',Arial,sans-serif;
-background:#fff;
-color:#111;
-}
-
-/* TOPBAR */
-.topbar{
-background:#000;
-color:#fff;
-padding:6px;
-text-align:center;
-font-size:13px;
-letter-spacing:1px;
+  font-family:'Inter', Arial, sans-serif;
+  background:#ffffff;
+  color:#111;
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
 }
 
 /* NAVBAR */
 .navbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 50px;
-background:#fff;
-border-bottom:1px solid #e5e5e5;
-position:sticky;
-top:0;
-z-index:1000;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 60px;
+  position:sticky;
+  top:0;
+  background:rgba(255,255,255,0.95);
+  border-bottom:1px solid rgba(0,0,0,0.05);
+  z-index:1000;
 }
 
 .logo{
-font-size:20px;
-font-weight:700;
-text-decoration:none;
-color:#000;
+  font-size:22px;
+  font-weight:700;
+  letter-spacing:1px;
+  color:#000;
+  text-decoration:none;
 }
 
+/* NAV LINKS */
 .nav-links a{
-margin:0 18px;
-text-decoration:none;
-color:#444;
-font-weight:500;
-position:relative;
-padding-bottom:5px;
-transition:.3s;
+  margin:0 20px;
+  text-decoration:none;
+  color:#444;
+  font-weight:500;
+  position:relative;
+  padding-bottom:6px;
 }
 
 .nav-links a::after{
-content:"";
-position:absolute;
-left:0;
-bottom:0;
-width:0;
-height:2px;
-background:#000;
-transition:.3s;
-}
-
-.nav-links a:hover{
-color:#000;
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:0;
+  height:2px;
+  background:#000;
+  transition:0.3s;
 }
 
 .nav-links a:hover::after{
-width:100%;
+  width:100%;
 }
 
 .nav-links a.active{
-color:#000;
-font-weight:600;
+  color:#000;
+  font-weight:600;
 }
 
 .nav-links a.active::after{
-width:100%;
+  width:100%;
 }
 
-.hero{
-background:#000;
-color:#fff;
-text-align:center;
-padding:90px 20px;
+/* HERO */
+.header{
+  background:linear-gradient(to right,#0a2540,#000);
+  color:#fff;
+  text-align:center;
+  padding:80px 20px;
 }
 
-.hero h1{
-font-size:48px;
-margin-bottom:15px;
+.header h1{
+  font-size:42px;
+  font-weight:600;
 }
 
-.hero p{
-max-width:700px;
-margin:auto;
-color:#ddd;
-line-height:1.7;
+.header p{
+  margin-top:15px;
+  color:#ddd;
 }
 
-.section{
-padding:70px 50px;
+/* MAIN */
+.main{
+  flex:1;
+  display:flex;
+  gap:60px;
+  padding:60px;
+  flex-wrap:wrap;
 }
 
-.container{
-max-width:1200px;
-margin:auto;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
+/* LEFT */
+.info{
+  flex:1;
+  min-width:300px;
 }
 
-.contact-info{
-display:flex;
-flex-direction:column;
-gap:25px;
+.info h3{
+  margin-bottom:15px;
 }
 
-.info-box{
-background:#fff;
-border:1px solid #eee;
-padding:30px;
-transition:.3s;
+.option{
+  margin-bottom:20px;
 }
 
-.info-box:hover{
-transform:translateY(-6px);
-box-shadow:0 12px 30px rgba(0,0,0,.08);
+.option button{
+  padding:10px 18px;
+  background:#000;
+  color:#fff;
+  border:none;
+  cursor:pointer;
+  transition:0.3s;
 }
 
-.info-box h3{
-margin-bottom:12px;
-font-size:22px;
+.option button:hover{
+  transform:scale(1.05);
 }
 
-.info-box p{
-color:#666;
-line-height:1.8;
+/* STATS */
+.stats{
+  display:flex;
+  gap:40px;
+  margin-top:30px;
 }
 
-.social{
-margin-top:20px;
-display:flex;
-flex-wrap:wrap;
-gap:12px;
+.stats h2{
+  font-size:30px;
 }
 
-.social a{
-text-decoration:none;
-background:#000;
-color:#fff;
-padding:10px 18px;
-transition:.3s;
-}
-.social a:hover{
-background:#333;
+/* FORM */
+.form{
+  flex:1;
+  min-width:320px;
+  border:1px solid #eee;
+  padding:35px;
+  background:#fff;
 }
 
-.form-box{
-background:#fff;
-border:1px solid #eee;
-padding:35px;
+.form h3{
+  margin-bottom:20px;
 }
 
-.form-box h2{
-margin-bottom:20px;
+input, textarea{
+  width:100%;
+  padding:12px;
+  border:1px solid #ddd;
+  margin-bottom:15px;
 }
 
-input,
-select,
-textarea{
-width:100%;
-padding:14px;
-margin-bottom:18px;
-border:1px solid #ddd;
-outline:none;
-font-size:15px;
-font-family:inherit;
+textarea{height:120px;}
+
+.submit-btn{
+  width:100%;
+  padding:14px;
+  background:#000;
+  color:#fff;
+  border:none;
+  cursor:pointer;
 }
 
-input:focus,
-select:focus,
-textarea:focus{
-border-color:#000;
+/* PROCESS SECTION */
+.process{
+  padding:80px 40px;
+  text-align:center;
 }
 
-textarea{
-height:160px;
-resize:none;
+.process h2{
+  margin-bottom:40px;
 }
 
-.primary{
-display:inline-block;
-background:#000;
-color:#fff;
-padding:14px 28px;
-border:none;
-cursor:pointer;
-font-size:15px;
-text-decoration:none;
-transition:.3s;
+.process-grid{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  flex-wrap:wrap;
 }
 
-.primary:hover{
-background:#222;
+.process-card{
+  width:260px;
+  border:1px solid #eee;
+  padding:25px;
+  transition:0.3s;
+  color:#000;
 }
 
-.map{
-padding:0 50px 70px;
+.process-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
 
-.map iframe{
-width:100%;
-height:450px;
-border:0;
+/* WHY */
+.why{
+  background:#f7f7f7;
+  padding:70px 40px;
+  text-align:center;
 }
 
+.why-grid{
+  display:flex;
+  gap:30px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.why-card{
+  width:260px;
+  background:#fff;
+  padding:25px;
+  border:1px solid #eee;
+  transition:0.3s;
+  color:#000;
+}
+
+/* FIXED BLACK LINKS */
+.why-card a{
+  text-decoration:none;
+  color:#111;
+  display:block;
+  transition:0.3s;
+}
+
+.why-card a:hover h3{
+  color:#000;
+}
+
+/* CTA */
 .cta{
-background:#000;
-color:#fff;
-text-align:center;
-padding:70px 20px;
+  background:#000;
+  color:#fff;
+  text-align:center;
+  padding:70px 20px;
 }
 
-.cta h2{
-font-size:38px;
-margin-bottom:20px;
+.cta button{
+  margin-top:20px;
+  padding:14px 30px;
+  border:none;
+  background:#fff;
+  color:#000;
+  cursor:pointer;
 }
 
-.cta p{
-max-width:700px;
-margin:auto;
-line-height:1.8;
-color:#ddd;
-margin-bottom:30px;
-}
-
+/* FOOTER */
 .footer{
-background:#111;
-color:#fff;
-padding:60px 50px;
-display:flex;
-justify-content:space-between;
-flex-wrap:wrap;
-gap:40px;
+  background:#111;
+  color:#aaa;
+  padding:50px;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
 }
 
-.footer h3,
-.footer h4{
-margin-bottom:15px;
-}
-
-.footer p{
-color:#ccc;
-line-height:1.8;
-}
+.footer h3, .footer h4{color:#fff;}
 
 .footer-bottom{
-background:#000;
-color:#aaa;
-text-align:center;
-padding:20px;
-font-size:14px;
-}
-
-@media(max-width:768px){
-
-.navbar{
-flex-direction:column;
-padding:20px;
-}
-
-.nav-links{
-margin-top:15px;
-}
-
-.container{
-grid-template-columns:1fr;
-}
-
-.hero h1{
-font-size:34px;
-}
-
-.section,
-.map{
-padding:40px 20px;
-}
-
-.footer{
-flex-direction:column;
-padding:40px 20px;
-}
+  text-align:center;
+  padding:12px;
+  background:#000;
 }
 
 </style>
 </head>
 
 <body>
-<div class="topbar">
-Trusted Financial Solutions • Secure • Transparent • Professional
-</div>
 
-<nav class="navbar">
-
-<a href="index.html" class="logo">
-Covea Wealth
-</a>
-
+<!-- NAVBAR -->
+<div class="navbar">
+<a href="index.html" class="logo">COVEA</a>
 <div class="nav-links">
 <a href="index.html">Home</a>
-<a href="about.html">About</a>
 <a href="services.html">Services</a>
+<a href="about.html">About</a>
 <a href="contact.html" class="active">Contact</a>
 </div>
-
-</nav>
-
-<section class="hero">
-
-<h1>Contact Us</h1>
-
-<p>
-We are committed to helping individuals and businesses
-achieve financial success. Get in touch with our experts
-for personalized financial solutions.
-</p>
-
-</section>
-
-<section class="section">
-
-<div class="container">
-
-<div class="contact-info">
-
-<div class="info-box">
-
-<h3>Office Address</h3>
-
-<p>
-Covea Wealth Solutions Pvt. Ltd.<br>
-India
-</p>
-
 </div>
 
-<div class="info-box">
-
-<h3>Call Us</h3>
-
-<p>
-+91 8766289206
-</p>
-
+<!-- HERO -->
+<div class="header">
+<h1>Speak With a Financial Advisor</h1>
+<p>Institutional-grade advisory tailored to your long-term wealth goals.</p>
 </div>
 
-<div class="info-box">
+<!-- MAIN -->
+<div class="main">
 
-<h3>Email</h3>
+<div class="info">
+<h3>Contact Options</h3>
 
-<p>
-info@coveawealthsolutions.com
-</p>
-
+<div class="option">
+<p><b>WhatsApp</b></p>
+<button onclick="openWhatsApp()">Chat Now</button>
 </div>
 
-<div class="info-box">
+<div class="option">
+<p><b>Email:</b> info@coveawealthsolutions.com.com</p>
+<button onclick="sendEmail()">Send Email</button>
+</div>
 
-<h3>Follow Us</h3>
+<div class="option">
+<p><b>Instagram</b></p>
+<button onclick="openInsta()">Visit Profile</button>
+</div>
 
-<div class="social">
-
-<a href="#">Facebook</a>
-
-<a href="#">Instagram</a>
-
-<a href="#">LinkedIn</a>
-
-<a href="#">X</a>
-
-<a href="#">YouTube</a>
-
-<a href="#">WhatsApp</a>
-
-<a href="#">Telegram</a>
-
+<div class="stats">
+<div><h2>500+</h2><p>Clients</p></div>
+<div><h2>₹10Cr+</h2><p>Managed</p></div>
+<div><h2>5+ Years</h2><p>Experience</p></div>
 </div>
 
 </div>
 
-</div>
+<div class="form">
+<h3>Request a Call Back</h3>
+<input type="text" placeholder="Full Name">
+<input type="email" placeholder="Email">
+<input type="tel" placeholder="Phone">
+<textarea placeholder="Message"></textarea>
 
-<div class="form-box">
-
-<h2>Send Us a Message</h2>
-
-<form>
-
-<input
-type="text"
-placeholder="Your Name"
-required>
-
-<input
-type="email"
-placeholder="Your Email"
-required>
-
-<input
-type="tel"
-placeholder="Phone Number"
-required>
-
-<select required>
-
-<option value="">
-Select Service
-</option>
-
-<option>
-Investment Planning
-</option>
-
-<option>
-Insurance
-</option>
-
-<option>
-Mutual Funds
-</option>
-
-<option>
-Financial Consultation
-</option>
-
-</select>
-
-<textarea
-placeholder="Your Message"
-required></textarea>
-
-<button
-type="submit"
-class="primary">
-
-Send Message
-
-</button>
-
-</form>
-
+<button class="submit-btn">Submit Request</button>
 </div>
 
 </div>
 
-  </section>  
-<div class="map">
+<!-- PROCESS -->
+<div class="process">
+<h2>Our Advisory Process</h2>
 
-<iframe
-src="https://www.google.com/maps?q=India&output=embed"
-loading="lazy"
-allowfullscreen>
-</iframe>
+<div class="process-grid">
 
+<div class="process-card">
+<a href="understand.html"><h3>01. Understand</h3></a>
+<p>Deep analysis of your financial profile.</p>
 </div>
 
-<section class="cta">
+<div class="process-card">
+<a href="strategy.html"><h3>02. Strategy</h3></a>
+<p>Custom investment roadmap aligned with goals.</p>
+</div>
 
-<h2>Let's Build Your Financial Future</h2>
+<div class="process-card">
+<a href="execute.html"><h3>03. Execute</h3></a>
+<p>Disciplined portfolio execution & monitoring.</p>
+</div>
 
-<p>
-Whether you're starting your investment journey or looking
-to optimize your portfolio, our financial experts are
-ready to help you achieve your financial goals.
-</p>
+</div>
+</div>
 
-<a href="services.html" class="primary">
-Explore Our Services
-</a>
+<!-- WHY -->
+<div class="why">
+<h2>Why Work With Covea</h2>
 
-</section>
+<div class="why-grid">
+<div class="why-card"><a href="dedicated-advisor.html"><h3>Dedicated Advisor</h3></a></div>
+<div class="why-card"><a href="research.html"><h3>Research Driven</h3></a></div>
+<div class="why-card"><a href="long-term-focus.html"><h3>Long-Term Focus</h3></a></div>
+</div>
+</div>
 
-<footer class="footer">
+<!-- CTA -->
+<div class="cta">
+<h2>Start Your Wealth Journey</h2>
+<button onclick="openWhatsApp()">Talk to Advisor</button>
+</div>
 
+<!-- FOOTER -->
+<div class="footer">
 <div>
-
 <h3>Covea Wealth Solutions Pvt. Ltd.</h3>
-
-<p>
-Professional Financial & Investment Solutions
-</p>
-
-<p>
-India
-</p>
-
+<p>India</p>
 </div>
 
 <div>
-
 <h4>Contact</h4>
-
-<p>📞 +91 8766289206</p>
-
-<p>✉️ info@coveawealthsolutions.com</p>
-
-<div class="social">
-
-<a href="#">Facebook</a>
-
-<a href="#">Instagram</a>
-
-<a href="#">LinkedIn</a>
-
-<a href="#">X</a>
-
-<a href="#">YouTube</a>
-
-<a href="#">WhatsApp</a>
-
-<a href="#">Telegram</a>
-
+<p>+91 8766289206</p>
+<p>info@coveawealthsolutions.com</p>
 </div>
-
 </div>
-
-</footer>
 
 <div class="footer-bottom">
-
 © 2026 Covea Wealth Solutions Pvt. Ltd.
-All Rights Reserved.
-
 </div>
 
+<script>
+function openWhatsApp(){
+  window.open("https://wa.me/918766289206");
+}
+function sendEmail(){
+  window.location.href="mailto:info@coveawealthsolutions.com";
+}
+function openInsta(){
+  window.location.href="comingsoon.html";
+}
+</script>
+
 </body>
-  </html>  
+  </html>
